@@ -1,0 +1,186 @@
+/* Add to :root */
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Header Enhancements */
+  .header {
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    border-block-end: none;
+  }
+  .header.active {
+    background: var(--glass-bg);
+    filter: drop-shadow(var(--shadow-2));
+  }
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo-img {
+    width: 5rem;
+    height: 5rem;
+    transition: transform var(--transition-1);
+  }
+  .logo-wrapper:hover .logo-img {
+    transform: scale(1.1);
+  }
+  .navbar-link {
+    transition: transform var(--transition-1), color var(--transition-1);
+  }
+  .navbar-link:is(:hover, :focus) {
+    transform: translateY(-2px);
+    color: var(--red-crayola);
+  }
+  .navbar-link.active {
+    color: var(--red-crayola);
+    font-weight: var(--fw-700);
+  }
+  
+  /* Hero Section */
+  .hero {
+    padding-block-start: calc(var(--section-padding) + 70px);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)), var(--white-1);
+  }
+  .hero-grid {
+    display: grid;
+    gap: 40px;
+    align-items: center;
+  }
+  .hero-content {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: var(--radius-8);
+    box-shadow: var(--shadow-1);
+  }
+  .hero-subtitle {
+    font-size: var(--fs-5);
+    color: var(--red-crayola);
+    letter-spacing: 1px;
+  }
+  .hero-title {
+    margin-block: 15px 10px;
+    font-weight: var(--fw-700);
+  }
+  .hero-text {
+    font-size: var(--fs-5);
+    color: var(--gray-web);
+  }
+  .hero-actions {
+    display: flex;
+    gap: 15px;
+    margin-block-start: 25px;
+  }
+  .hero-img {
+    border-radius: var(--radius-8);
+    box-shadow: var(--shadow-2);
+    transition: transform var(--transition-2);
+  }
+  .hero-banner:hover .hero-img {
+    transform: scale(1.02);
+  }
+  
+  /* Service Teaser */
+  .service.teaser {
+    background: var(--white-2);
+  }
+  .service-grid {
+    gap: 25px;
+    padding-block: 20px;
+  }
+  .service-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    padding: 25px;
+    transition: transform var(--transition-2), box-shadow var(--transition-2);
+  }
+  .service-card:is(:hover, :focus-within) {
+    transform: translateY(-15px);
+    box-shadow: 0 12px 32px var(--black_10);
+  }
+  .service-card .card-icon {
+    padding: 20px;
+    transition: transform var(--transition-1);
+  }
+  .service-card:hover .card-icon {
+    transform: rotate(10deg);
+  }
+  .service-cta {
+    text-align: center;
+    margin-block-start: 30px;
+  }
+  
+  /* CTA Section */
+  .cta {
+    background: url('assets/images/cta-bg.jpg') no-repeat center/cover fixed;
+  }
+  .cta .container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: var(--radius-8);
+    box-shadow: var(--shadow-2);
+  }
+  .cta::after {
+    opacity: 0.85;
+  }
+  .cta-text {
+    color: var(--white-1);
+    margin-block: 10px 20px;
+  }
+  
+  /* Button Enhancements */
+  .btn {
+    padding: 12px 35px;
+    border-radius: var(--radius-8);
+  }
+  .btn-primary {
+    background-size: 200% 200%;
+    animation: gradientShift 5s ease infinite;
+  }
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .btn-secondary {
+    border: 2px solid var(--eerie-black);
+    transition: background-color var(--transition-1), color var(--transition-1), transform var(--transition-1);
+  }
+  .btn-secondary:is(:hover, :focus) {
+    transform: scale(1.05);
+  }
+  .btn:focus-visible {
+    outline: 2px solid var(--red-crayola);
+    outline-offset: 2px;
+  }
+  
+  /* Footer */
+  .footer {
+    background: var(--white-2);
+    padding-block: 25px;
+  }
+  
+  /* Back-to-Top */
+  .back-top-btn {
+    padding: 14px;
+    background: var(--gradient);
+    transition: opacity var(--transition-1), transform var(--transition-1);
+  }
+  
+  /* Media Queries Adjustments */
+  @media (min-width: 992px) {
+    .hero-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .hero-content {
+      padding: 40px;
+    }
+    .service-card {
+      padding: 30px;
+    }
+  }
